@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamad | Microsoft 365 & Power Platform Consultant</title>
+    <meta name="description" content="Microsoft 365 migrations, SharePoint solutions at scale, and Power Platform automation. Microsoft Certified consultant helping businesses streamline operations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #161616;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a0a0;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --border: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0 100px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Certifications badge */
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .cert-badge svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+        }
+
+        .cert-badge span {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Section styles */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            transition: border-color 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Projects */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--accent);
+            padding: 32px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .project-tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            padding: 4px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .project-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Contact */
+        .contact-content {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .contact-email {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-email:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav a {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">hamad<span>365</span></a>
+                <nav>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Microsoft 365 & Power Platform<br><span>Consultant</span></h1>
+                <p>I help businesses migrate, automate, and scale with Microsoft 365, SharePoint, and Power Platform. No fluff. Just results.</p>
+                <a href="#contact" class="cta-button">Get in touch</a>
+                <div class="cert-badge">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <span>Microsoft Certified: Power Platform Functional Consultant & Power BI Data Analyst</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <p class="section-title">Services</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Microsoft 365 Migrations</h3>
+                        <p>Tenant-to-tenant migrations, email migrations, and data transfers. Clean execution with minimal downtime.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>SharePoint Solutions</h3>
+                        <p>Custom SharePoint applications, SPFx development, and enterprise document management systems built to scale.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Power Automate Workflows</h3>
+                        <p>Business process automation that eliminates manual work. Approval flows, data syncing, and system integrations.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Power BI Reporting</h3>
+                        <p>Dashboards and reports that surface insights. Connected to your data sources, refreshed automatically.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Custom Connectors</h3>
+                        <p>Connect Power Platform to any external API. Custom connectors that extend what's possible with your workflows.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>M365 Administration</h3>
+                        <p>Tenant setup, security configuration, license optimization, and ongoing support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <p class="section-title">Selected Projects</p>
+                <div class="projects-list">
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Maritime Operations Platform</h3>
+                            <span class="project-tag">SharePoint + SPFx</span>
+                        </div>
+                        <p>Built a comprehensive SharePoint-based operations management system for a maritime company. The platform handles vessel tracking, document management, and operational workflows across their global fleet.</p>
+                        <p>Developed custom SPFx components with REST API optimization to bypass SharePoint lookup column limits. Implemented advanced search functionality across the entire vessel database with sub-second response times.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">90K+</span>
+                                <span class="stat-label">Ship records managed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">SPFx</span>
+                                <span class="stat-label">Custom components</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Order & Invoice Automation</h3>
+                            <span class="project-tag">Power Automate</span>
+                        </div>
+                        <p>Automated the entire in-house order process and invoice processing for a North America-based IT solutions company. Replaced manual workflows with end-to-end automation covering order intake, approvals, and invoice reconciliation.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">$3B</span>
+                                <span class="stat-label">Company revenue</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">$67K/mo</span>
+                                <span class="stat-label">Cost savings identified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Custom Power Platform Connector</h3>
+                            <span class="project-tag">Custom Connector + API</span>
+                        </div>
+                        <p>Developed a custom Power Platform connector to integrate an external business system with Power Automate and Power Apps. Enabled seamless data flow between the client's existing tools and Microsoft ecosystem.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Federal Contracting Automation</h3>
+                            <span class="project-tag">Workflow Automation + AI</span>
+                        </div>
+                        <p>Built an automated system to monitor and analyze federal contracting opportunities from SAM.gov. The system pulls new opportunities, analyzes them against client criteria using AI, and surfaces relevant matches—eliminating hours of manual review.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Real Estate Lead Generation System</h3>
+                            <span class="project-tag">Power Automate + Outreach</span>
+                        </div>
+                        <p>Designed and implemented a lead generation and automated outreach system for a real estate developer in Los Angeles. The system identifies prospects, manages pipeline, and automates follow-up communications.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Tenant-to-Tenant Migration</h3>
+                            <span class="project-tag">M365 Migration</span>
+                        </div>
+                        <p>Executed a complete Microsoft 365 tenant-to-tenant migration for a UK company expanding to India. Migrated email, OneDrive, and SharePoint data using BitTitan MigrationWiz with zero data loss.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-label">Users migrated</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Data loss</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <p class="section-title">About</p>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm Hamad—a Microsoft 365 and Power Platform consultant focused on helping businesses work better with Microsoft tools.</p>
+                        <p>I've spent years in IT operations, working on everything from vendor negotiations and contract renewals to building automation workflows and managing complex SharePoint environments.</p>
+                        <p>I hold Microsoft certifications in Power Platform and Power BI. I work remotely with clients across different time zones.</p>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Microsoft 365</span>
+                        <span class="skill-tag">SharePoint</span>
+                        <span class="skill-tag">SPFx</span>
+                        <span class="skill-tag">Power Automate</span>
+                        <span class="skill-tag">Power Apps</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Custom Connectors</span>
+                        <span class="skill-tag">Dataverse</span>
+                        <span class="skill-tag">Graph API</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">BitTitan</span>
+                        <span class="skill-tag">PowerShell</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Let's work together</h2>
+                    <p>Have a project in mind? Need help with Microsoft 365 or Power Platform? Send me an email.</p>
+                    <a href="mailto:h@hamad365.com" class="contact-email">h@hamad365.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Hamad. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
