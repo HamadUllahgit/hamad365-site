@@ -84,6 +84,10 @@
             color: var(--text-primary);
         }
 
+        nav a.external {
+            color: var(--accent);
+        }
+
         /* Hero */
         .hero {
             padding: 120px 0 100px;
@@ -107,6 +111,12 @@
             margin-bottom: 40px;
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
             display: inline-block;
             background: var(--accent);
@@ -119,6 +129,17 @@
 
         .cta-button:hover {
             background: var(--accent-hover);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .cta-button.secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         /* Certifications badge */
@@ -215,6 +236,12 @@
             font-weight: 600;
         }
 
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
         .project-tag {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
@@ -259,6 +286,35 @@
         .stat-label {
             font-size: 12px;
             color: var(--text-secondary);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-link {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         /* About */
@@ -330,6 +386,33 @@
             color: var(--accent-hover);
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contact-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -378,6 +461,7 @@
                     <a href="#projects">Projects</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
+                    <a href="https://github.com/HamadUllahgit" target="_blank" class="external">GitHub</a>
                 </nav>
             </div>
         </div>
@@ -388,7 +472,10 @@
             <div class="container">
                 <h1>Microsoft 365 & Power Platform<br><span>Consultant</span></h1>
                 <p>I help businesses migrate, automate, and scale with Microsoft 365, SharePoint, and Power Platform. No fluff. Just results.</p>
-                <a href="#contact" class="cta-button">Get in touch</a>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button">Get in touch</a>
+                    <a href="https://github.com/HamadUllahgit" target="_blank" class="cta-button secondary">View GitHub</a>
+                </div>
                 <div class="cert-badge">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                     <span>Microsoft Certified: Power Platform Functional Consultant & Power BI Data Analyst</span>
@@ -417,12 +504,12 @@
                         <p>Dashboards and reports that surface insights. Connected to your data sources, refreshed automatically.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Custom Connectors</h3>
-                        <p>Connect Power Platform to any external API. Custom connectors that extend what's possible with your workflows.</p>
+                        <h3>Graph API Integrations</h3>
+                        <p>Connect external apps to Microsoft 365. OAuth2 flows, OneDrive access, and custom API integrations.</p>
                     </div>
                     <div class="service-card">
-                        <h3>M365 Administration</h3>
-                        <p>Tenant setup, security configuration, license optimization, and ongoing support.</p>
+                        <h3>Desktop Applications</h3>
+                        <p>.NET desktop apps with Office automation. Word/Excel/Outlook integration for automated workflows.</p>
                     </div>
                 </div>
             </div>
@@ -436,26 +523,127 @@
                     <div class="project-card">
                         <div class="project-header">
                             <h3>Maritime Operations Platform</h3>
-                            <span class="project-tag">SharePoint + SPFx</span>
+                            <div class="project-tags">
+                                <span class="project-tag">SharePoint</span>
+                                <span class="project-tag">SPFx</span>
+                                <span class="project-tag">Power Automate</span>
+                            </div>
                         </div>
-                        <p>Built a comprehensive SharePoint-based operations management system for a maritime company. The platform handles vessel tracking, document management, and operational workflows across their global fleet.</p>
-                        <p>Developed custom SPFx components with REST API optimization to bypass SharePoint lookup column limits. Implemented advanced search functionality across the entire vessel database with sub-second response times.</p>
+                        <p>Built a comprehensive SharePoint-based operations management system for a maritime company. 6 custom SPFx form customizers handling vessel tracking, enquiries, quotations, and job awards.</p>
+                        <p>Solved SharePoint's 5,000 item threshold with indexed columns and async search lookups. The system handles 90,000+ vessel records without timeouts.</p>
                         <div class="project-stats">
                             <div class="stat">
                                 <span class="stat-value">90K+</span>
-                                <span class="stat-label">Ship records managed</span>
+                                <span class="stat-label">Records handled</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-value">SPFx</span>
-                                <span class="stat-label">Custom components</span>
+                                <span class="stat-value">15→3</span>
+                                <span class="stat-label">Min per quote</span>
                             </div>
+                            <div class="stat">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">SPFx components</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HamadUllahgit/maritime-operations-spfx" target="_blank" class="project-link">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Training Compliance System</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">SharePoint</span>
+                                <span class="project-tag">Power Automate</span>
+                                <span class="project-tag">Power BI</span>
+                            </div>
+                        </div>
+                        <p>Built for a UK care home consultancy tracking mandatory training across 6 locations. Each employee has 35-40 trainings with different renewal cycles.</p>
+                        <p>3-tier automated notifications (Employee → Manager → Management), Power BI dashboard with Row Level Security so managers only see their team's data.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">4,100+</span>
+                                <span class="stat-label">Training records</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">93.2%</span>
+                                <span class="stat-label">Compliance rate</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Care homes</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HamadUllahgit/training-compliance-system" target="_blank" class="project-link">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>OneDrive Graph API Integration</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Graph API</span>
+                                <span class="project-tag">Azure AD</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                        </div>
+                        <p>Built a Microsoft Graph API integration enabling external applications to securely read files from OneDrive for Business. Client needed their AI assistant to access documents without user sign-in.</p>
+                        <p>OAuth2 Client Credentials flow, complete Python client library, Azure setup documentation, and token management system.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/HamadUllahgit/graph-api-onedrive-integration" target="_blank" class="project-link">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Automated Report Generator</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">.NET 8</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">Office Automation</span>
+                            </div>
+                        </div>
+                        <p>Windows desktop app for generating professional assessment reports. Paste raw website data, app auto-parses addresses and lot numbers, generates Word + PDF + database record + Outlook email draft.</p>
+                        <p>25+ auto-filled fields, image support, smart dropdowns that remember user additions, MS Access integration.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">15→3</span>
+                                <span class="stat-label">Min per report</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">25+</span>
+                                <span class="stat-label">Auto-filled fields</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4</span>
+                                <span class="stat-label">Office integrations</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HamadUllahgit/report-generator-desktop" target="_blank" class="project-link">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                View on GitHub
+                            </a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
                             <h3>Order & Invoice Automation</h3>
-                            <span class="project-tag">Power Automate</span>
+                            <div class="project-tags">
+                                <span class="project-tag">Power Automate</span>
+                            </div>
                         </div>
                         <p>Automated the entire in-house order process and invoice processing for a North America-based IT solutions company. Replaced manual workflows with end-to-end automation covering order intake, approvals, and invoice reconciliation.</p>
                         <div class="project-stats">
@@ -472,32 +660,11 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Custom Power Platform Connector</h3>
-                            <span class="project-tag">Custom Connector + API</span>
-                        </div>
-                        <p>Developed a custom Power Platform connector to integrate an external business system with Power Automate and Power Apps. Enabled seamless data flow between the client's existing tools and Microsoft ecosystem.</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Federal Contracting Automation</h3>
-                            <span class="project-tag">Workflow Automation + AI</span>
-                        </div>
-                        <p>Built an automated system to monitor and analyze federal contracting opportunities from SAM.gov. The system pulls new opportunities, analyzes them against client criteria using AI, and surfaces relevant matches—eliminating hours of manual review.</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>Real Estate Lead Generation System</h3>
-                            <span class="project-tag">Power Automate + Outreach</span>
-                        </div>
-                        <p>Designed and implemented a lead generation and automated outreach system for a real estate developer in Los Angeles. The system identifies prospects, manages pipeline, and automates follow-up communications.</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
                             <h3>Tenant-to-Tenant Migration</h3>
-                            <span class="project-tag">M365 Migration</span>
+                            <div class="project-tags">
+                                <span class="project-tag">M365 Migration</span>
+                                <span class="project-tag">BitTitan</span>
+                            </div>
                         </div>
                         <p>Executed a complete Microsoft 365 tenant-to-tenant migration for a UK company expanding to India. Migrated email, OneDrive, and SharePoint data using BitTitan MigrationWiz with zero data loss.</p>
                         <div class="project-stats">
@@ -532,12 +699,12 @@
                         <span class="skill-tag">Power Automate</span>
                         <span class="skill-tag">Power Apps</span>
                         <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Custom Connectors</span>
-                        <span class="skill-tag">Dataverse</span>
                         <span class="skill-tag">Graph API</span>
-                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Azure AD</span>
+                        <span class="skill-tag">.NET / C#</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">BitTitan</span>
-                        <span class="skill-tag">PowerShell</span>
                     </div>
                 </div>
             </div>
@@ -549,6 +716,20 @@
                     <h2>Let's work together</h2>
                     <p>Have a project in mind? Need help with Microsoft 365 or Power Platform? Send me an email.</p>
                     <a href="mailto:h@hamad365.com" class="contact-email">h@hamad365.com</a>
+                    <div class="contact-links">
+                        <a href="https://github.com/HamadUllahgit" target="_blank" class="contact-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~01f28bdcd32df9fe01" target="_blank" class="contact-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                            Upwork
+                        </a>
+                        <a href="https://www.linkedin.com/in/hamad-ullah-00ba71160/" target="_blank" class="contact-link">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -556,7 +737,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Hamad. All rights reserved.</p>
+            <p>© 2025 Hamad. Based in Pakistan, working globally.</p>
         </div>
     </footer>
 </body>
