@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamad | Microsoft 365 & Power Platform Consultant</title>
-    <meta name="description" content="Microsoft 365 migrations, SharePoint solutions at scale, and Power Platform automation. Microsoft Certified consultant helping businesses streamline operations.">
+    <meta name="description" content="Microsoft 365 migrations, SharePoint solutions at scale, Power Platform automation, and AI document processing with Azure OpenAI. Microsoft Certified consultant helping businesses streamline operations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -508,6 +508,10 @@
                         <p>Connect external apps to Microsoft 365. OAuth2 flows, OneDrive access, and custom API integrations.</p>
                     </div>
                     <div class="service-card">
+                        <h3>AI &amp; Document Intelligence</h3>
+                        <p>Azure OpenAI and Document Intelligence inside your Microsoft 365 tenant. Reading documents, scoring, and drafting replies.</p>
+                    </div>
+                    <div class="service-card">
                         <h3>Desktop Applications</h3>
                         <p>.NET desktop apps with Office automation. Word/Excel/Outlook integration for automated workflows.</p>
                     </div>
@@ -520,6 +524,33 @@
                 <p class="section-title">Selected Projects</p>
                 <div class="projects-list">
                     
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>RFQ &amp; Quote Intelligence System</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Power Automate</span>
+                                <span class="project-tag">Azure OpenAI</span>
+                                <span class="project-tag">SharePoint</span>
+                            </div>
+                        </div>
+                        <p>Built for a US lighting rep firm and running in production since February 2026. Every email hitting the shared RFQ mailbox is captured and archived in SharePoint, then Azure Document Intelligence and GPT-4o read the attachments, identify the fixture schedules, and draft a reply for the quotes team.</p>
+                        <p>A matching engine checks each incoming request against historical quotes in the client's on-prem SQL ERP, so nothing gets quoted twice. Seven Power Automate flows covering ingestion, text extraction, detection, summarisation, drafting, and duplicate matching.</p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-value">300K+</span>
+                                <span class="stat-label">Historical quotes searched</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">59→4</span>
+                                <span class="stat-label">False positives / 90 pages</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">7</span>
+                                <span class="stat-label">Automated flows</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-card">
                         <div class="project-header">
                             <h3>Maritime Operations Platform</h3>
@@ -701,6 +732,8 @@
                         <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">Graph API</span>
                         <span class="skill-tag">Azure AD</span>
+                        <span class="skill-tag">Azure OpenAI</span>
+                        <span class="skill-tag">Document Intelligence</span>
                         <span class="skill-tag">.NET / C#</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">TypeScript</span>
@@ -737,7 +770,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Hamad. Based in Pakistan, working globally.</p>
+            <p>© 2026 Hamad. Based in Pakistan, working globally.</p>
         </div>
     </footer>
 </body>
